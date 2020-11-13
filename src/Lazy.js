@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Lazy() {
   const [countries, SetCountries] = useState([]);
@@ -15,16 +16,7 @@ function Lazy() {
       }
     );
   }, []);
-  //   let myFun = () => {
-  //     axios.get("https://restcountries.eu/rest/v2/all").then(
-  //       (posRes) => {
-  //         console.log("posRes", posRes);
-  //       },
-  //       (errRes) => {
-  //         console.log("errRes", errRes);
-  //       }
-  //     );
-  //   };
+
   return (
     <div>
       <table>
@@ -32,10 +24,10 @@ function Lazy() {
           <tr>
             <td>
               <LazyLoadImage
-                height="500px"
-                src={element.flag} // use normal <img> attributes as props
-                width="500px"
-                effect="black-and-white"
+                height="400px"
+                src={element.flag}
+                width="400px"
+                effect="blur"
               />
             </td>
           </tr>
